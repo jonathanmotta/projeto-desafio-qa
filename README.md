@@ -11,7 +11,7 @@ Tutorial: Instalação do JAVA (JDK) e Eclipse no Windows
 http://www.matera.com/br/2015/05/12/tutorial-instalacao-do-java-jdk-e-eclipse-no-windows/
 
 Tutorial: Instalação do Apache Maven e Configuração no Eclipse
-http://matera.com/br/2015/06/30/tutorial-instalacao-apache-maven-configuracao-   eclipse/
+http://matera.com/br/2015/06/30/tutorial-instalacao-apache-maven-configuracao-eclipse/
 
 1.1	Para a configuração do driver,  baixar o chromedriver no link abaixo:
 https://chromedriver.storage.googleapis.com/index.html?path=2.41/
@@ -19,10 +19,14 @@ https://chromedriver.storage.googleapis.com/index.html?path=2.41/
 Nas variáveis de ambiente adicionar o caminho para o arquivo baixado: chromedriver.exe
 EXEMPLO: DRIVER_HOME: C:\Users\Documents\driver e depois chame ele no PATH. %DRIVERS_HOME%
 
-2.	Fazer a importação do projeto através do maven no eclipse.
+2.	Criar uma pasta "workspace" no d: por exemplo e colar o projeto "DesafioQA" lá dentro.
+
+2.1 Em seguida abrir o eclipse e localizar a pasta "workspace" para inicializar o projeto.
+
+2.2 Fazer a importação do projeto "DesafioQA" através do maven no eclipse.
  
-3.	Necessário instalar os plugins do Cucumber e JUnit.
+3.	Necessário instalar os plugins do Cucumber e JUnit caso não possua.
 
 4.	Mudar o Text file encoding para UTF: 8. 
 
-5.	Por fim executar a classe RunnerTest no pacote runners.
+5.	Por fim executar a classe "RunnerTest" no pacote runners.
