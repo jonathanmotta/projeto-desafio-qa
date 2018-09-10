@@ -7,6 +7,7 @@ Passos para executar os cenários de teste
 1.	Instalar o eclipse e configurar as variáveis de ambiente;  (JAVA (JDK) e Apache Maven e Driver)
 
 Referências:
+
 Tutorial: Instalação do JAVA (JDK) e Eclipse no Windows
 http://www.matera.com/br/2015/05/12/tutorial-instalacao-do-java-jdk-e-eclipse-no-windows/
 
@@ -18,6 +19,11 @@ https://chromedriver.storage.googleapis.com/index.html?path=2.41/
 
 Nas variáveis de ambiente adicionar o caminho para o arquivo baixado: chromedriver.exe
 EXEMPLO: DRIVER_HOME: C:\Users\Documents\driver e depois chame ele no PATH. %DRIVERS_HOME%
+
+Ou se preferiri adicionar o comando no @Before:
+Exemplo:
+System.setProperty("webdriver.chrome.drive", "D:\\drivers\\chromedriver.exe.exe");
+WebDriver driver = new ChromeDriver();
 
 2.	Criar uma pasta "workspace" no d: por exemplo e colar o projeto "DesafioQA" lá dentro.
 
