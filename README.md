@@ -4,6 +4,7 @@ Fluxo de Compra na Kabum
 Realizei a Automação de Testes com Cucumber + Selenium, pois da a liberdade de escrever os cenários em BDD além da organização da estrutura em pastas/pacotes.
 
 Passos para executar os cenários de teste
+
 1.	Instalar o eclipse e configurar as variáveis de ambiente;  (JAVA (JDK) e Apache Maven e Driver)
 
 Referências:
@@ -25,7 +26,9 @@ Exemplo:
 System.setProperty("webdriver.chrome.drive", "D:\\drivers\\chromedriver.exe.exe");
 WebDriver driver = new ChromeDriver();
 
-2.	Criar uma pasta "workspace" no d: por exemplo e colar o projeto "DesafioQA" lá dentro.
+1.2 Em Clone or download, faça o Download ZIP.
+
+2.	Criar uma pasta "workspace" no D:\\ por exemplo e colar o projeto "DesafioQA" lá dentro.
 
 2.1 Em seguida abrir o eclipse e localizar a pasta "workspace" para inicializar o projeto.
 
