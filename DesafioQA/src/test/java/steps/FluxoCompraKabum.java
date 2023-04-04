@@ -17,14 +17,14 @@ public class FluxoCompraKabum {
 	
 	@Before
 	public void inicio() {
-		System.out.println("Começando o Cenário Aqui!");
+	   System.out.println("Começando o Cenário Aqui!");
 	}
 	
 	@After
 	public void fecharBrowser() {
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='ATENDIMENTO'])[1]/following::img[1]")).click();
-		driver.quit();
-		System.out.println("Fechou o Browser após Execução!");
+	   driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='ATENDIMENTO'])[1]/following::img[1]")).click();
+	   driver.quit();
+	   System.out.println("Fechou o Browser após Execução!");
 	}
 	
 	public void sleep() throws Throwable {
@@ -37,24 +37,24 @@ public class FluxoCompraKabum {
 	
 	@Dado("^que eu faça o login no sistema$")
 	public void queEuFaçaOLoginNoSistema() throws Throwable {
-		driver = new ChromeDriver();
+	    driver = new ChromeDriver();
 	    driver.get("https://www.kabum.com.br/");
-		driver.findElement(By.linkText("LOGIN | CADASTRE-SE")).click();
+	    driver.findElement(By.linkText("LOGIN | CADASTRE-SE")).click();
 	    driver.findElement(By.id("textfield12")).click();
 	    driver.findElement(By.id("textfield12")).clear();
-	    driver.findElement(By.id("textfield12")).sendKeys("jonathandesafioqa@gmail.com");
+	    driver.findElement(By.id("textfield12")).sendKeys("digite-seu-email-aqui");
 	    driver.findElement(By.id("textfield15")).click();
 	    driver.findElement(By.id("textfield15")).clear();
-	    driver.findElement(By.id("textfield15")).sendKeys("desafioqa");
+	    driver.findElement(By.id("textfield15")).sendKeys("digite-sua-senha-aqui");
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Entrar com sua conta do Facebook ou Google'])[1]/preceding::input[1]")).click();
 	}
 	
 	
 	@Dado("^compre o produto de minha escolha$")
 	public void compreOProdutoDeMinhaEscolha() throws Throwable {
-		//Preenche o nome do produto na pesquisa
-		sleep();
-		driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='POLÍTICAS DO SITE'])[1]/following::input[1]")).click();
+	    //Preenche o nome do produto na pesquisa
+	    sleep();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='POLÍTICAS DO SITE'])[1]/following::input[1]")).click();
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='POLÍTICAS DO SITE'])[1]/following::input[1]")).clear();
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='POLÍTICAS DO SITE'])[1]/following::input[1]")).sendKeys("SSD WD Green 2.5´ 240GB SATA III 6Gb/s");
 	    	    
@@ -70,21 +70,21 @@ public class FluxoCompraKabum {
 	
 	@Quando("^adicionar uma unidade do produto em minha cesta de compra$")
 	public void adicionarUmaUnidadesDoProdutoEmMinhaCestaDeCompra() throws Throwable {
-		//clica no botão Ir para o carrinho
-		sleep();
-		driver.findElement(By.linkText("IR PARA O CARRINHO")).click();
+	    //clica no botão Ir para o carrinho
+	    sleep();
+	    driver.findElement(By.linkText("IR PARA O CARRINHO")).click();
 		
-		//clica no botão Finalizar Compra
-		sleep();
+	    //clica no botão Finalizar Compra
+	    sleep();
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='CARRINHO DE COMPRAS'])[1]/following::a[2]")).click();
 	}
 	
 	
 	@Quando("^adicionar duas unidades do produto em minha cesta de compra$")
 	public void adicionarDuasUnidadesDoProdutoEmMinhaCestaDeCompra() throws Throwable {
-		//clica no botão Ir para o carrinho
-		sleep();
-		driver.findElement(By.linkText("IR PARA O CARRINHO")).click();
+	    //clica no botão Ir para o carrinho
+	    sleep();
+	    driver.findElement(By.linkText("IR PARA O CARRINHO")).click();
 		
 	    //selecionar 2 unidades do produto
 	    driver.findElement(By.id("produto_quantidade")).click();
@@ -92,7 +92,7 @@ public class FluxoCompraKabum {
 	    driver.findElement(By.id("produto_quantidade")).sendKeys("2");
 	    driver.findElement(By.linkText("Atualizar")).click();
 	    
-		//clica no botão Finalizar Compra
+	    //clica no botão Finalizar Compra
 	    sleep();
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='CARRINHO DE COMPRAS'])[1]/following::a[2]")).click();
 	}
@@ -100,13 +100,13 @@ public class FluxoCompraKabum {
 	
 	@Quando("^remover um item do carrinho$")
 	public void removerUmItemDoCarrinho() throws Throwable {
-		driver.findElement(By.linkText("Excluir")).click();
+	    driver.findElement(By.linkText("Excluir")).click();
 	}
 
 	
 	@Então("^não deve haver produtos na cesta$")
 	public void nãoDeveHaverProdutosNaCesta() throws Throwable {
-		sleep();
+	    sleep();
 	    driver.get("https://www.kabum.com.br/cgi-local/site/carrinho/carrinho.cgi");
 	    assertEquals("SEU CARRINHO ESTÁ VAZIO", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Total'])[1]/following::h4[1]")).getText());		
 	}
@@ -115,7 +115,7 @@ public class FluxoCompraKabum {
 	@Quando("^finalizar a compra com cartão de crédito$")
 	public void finalizarACompraComCartãoDeCrédito() throws Throwable {
 	   // Thread.sleep(2000);
-		sleep();
+	    sleep();
 	    driver.findElement(By.linkText("Cartão de Credito")).click();
 
 	    //Forma de pagamento:
@@ -169,7 +169,7 @@ public class FluxoCompraKabum {
 	
 	@Então("^devo ver o campo observações presente na tela antes de confirmar meu pedido$")
 	public void devoVerAMensagem() throws Throwable {
-		driver.findElement(By.name("pedido_observacao")).click();
+	    driver.findElement(By.name("pedido_observacao")).click();
 	}
 
 }
